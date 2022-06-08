@@ -1,2 +1,0 @@
-# project-instance
-Vue instance
