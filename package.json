@@ -1,6 +1,6 @@
 {
   "name": "project-instance",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Vue.js project",
   "author": "cenmcc <15565555045@163.com>",
   "private": true,
@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

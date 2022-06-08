@@ -6,9 +6,8 @@
 
 <script>
 import request from '@/network/http' 
-
 export default {
-  name: 'Home',
+  name: 'axiosDemo',
   data () {
     return {
 

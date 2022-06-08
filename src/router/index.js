@@ -5,7 +5,7 @@ import Home from '@/views/Home'
 Vue.use(Router)
 
 const Swiper = () => import('@/views/Swiper.demo.vue')
-
+const Axios = () => import('@/views/axios.demo.vue')
 const routes = [
   {
     path: '/',
@@ -16,6 +16,11 @@ const routes = [
     path: '/swiper',
     name: 'Swiper',
     component: Swiper
+  },
+  {
+    path: '/axios',
+    name: 'Axios',
+    component: Axios
   }
 ]
 
