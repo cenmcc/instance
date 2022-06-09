@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { baseURL } from './base'
+import { baseURL } from '@/config/env'
 // 请求拦截
 axios.interceptors.request.use(config => {
   return config
