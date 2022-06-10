@@ -7,21 +7,21 @@
  * 
  */
 
-let baseUrl = '';
+let baseURL = '';
 let routerMode = 'hash';
 let imgBaseUrl = '';
 
 
 if (process.env.NODE_ENV == 'development') {
-  imgBaseUrl = '';
-  baseUrl = 'https://www.fastmock.site/mock/f6c02f51b99c17b995f3b056e4e405b7/openh5'
+  console.log('development')
+  baseURL = 'https://www.fastmock.site/mock/f6c02f51b99c17b995f3b056e4e405b7/openh5'
 } else if (process.env.NODE_ENV == 'production') {
-  baseUrl = '';
-  imgBaseUrl = '';
+  console.log('production')
+  baseUrl = 'https://www.baidu.com';
 }
 
 export {
-  baseUrl,
+  baseURL,
   routerMode,
   imgBaseUrl,
 }
