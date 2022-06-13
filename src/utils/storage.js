@@ -1,9 +1,11 @@
 /**
  * 存储localStorage
  */
-function setStore(key, value) {
-  if (typeof value !== 'string') {
-    value = JSON.stringify(value)
+function setStorage(key, value) {
+  if (value === "" || value === undefined || value === null) {
+    value = null;
+  } else if (typeof value !== "string") {
+    value = JSON.stringify(value);
   }
   window.localStorage.setItem(key, value);
 }
@@ -11,65 +13,34 @@ function setStore(key, value) {
 /**
  * 获取localStorage
  */
-function getStore(key) {
-  if (!key) return
-  const value = window.localStorage.getItem(key)
+function getStorage(key) {
+  if (!key) return;
+  const value = window.localStorage.getItem(key);
   try {
-    return JSON.parse(value)
+    return JSON.parse(value);
   } catch (e) {
-    return value
+    return value;
   }
+}
+// 获取localStorage所有key
+function getStorageKey() {
+  const keys = Object.keys(window.localStorage)
+  return keys
 }
 /**
  * 删除localStorage
  */
-function removeStore(name) {
+function removeStorage(name) {
   if (!name) return;
   window.localStorage.removeItem(name);
 }
 
 /**
- * 设置cookie
+ * 清空localStorage
  */
-function setCookie(name, value, time = 10080, path = '/', domain, secure) {
-
-  let date = new Date();
-  date.setTime(date.getTime() + (time * 1000));
-
-  document.cookie = name + '=' + value +
-    '; path=' + path +
-    '; expires=' + date.toUTCString() +
-    '; domain=' + ((domain) ? domain : '') +
-    '; secure=' + ((secure) ? secure : '');
+function clearStorage() {
+  window.localStorage.clear();
 }
 
-/**
- * 获取cookie
- */
-function getCookie(name) {
-  const cookie = " " + document.cookie;
-  var search = " " + name + "=";
-  var setStr = null;
-  var offset = 0;
-  var end = 0;
-  if (cookie.length > 0) {
-    offset = cookie.indexOf(search);
-    if (offset != -1) {
-      offset += search.length;
-      end = cookie.indexOf(";", offset)
-      if (end == -1) {
-        end = cookie.length;
-      }
-      setStr = unescape(cookie.substring(offset, end));
-    }
-  }
-  return (setStr);
-}
 
-export {
-  setStore,
-  getStore,
-  removeStore,
-  setCookie,
-  getCookie,
-}
+export { setStorage, getStorage, removeStorage, clearStorage, getStorageKey};

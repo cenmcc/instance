@@ -1,38 +1,98 @@
 <template>
-  <div>
-    <button @click="submit">提交</button>
-    <button @click="getitem">获取</button>
-  </div>
+  <Scroll class="wrapper">
+    <ul class="list">
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+      <li>21</li>
+    </ul>
+  </Scroll>
 </template>
 
 <script>
-import request from '@/network/http' 
-import { setStore,getStore } from '@/utils/storage'
+import Scroll from '@/components/scroll/scroll'
 export default {
   name: 'Home',
   data () {
     return {
-
     }
   },
-  methods: {
-    submit() {
-      setStore('name','hello world')
-    },
-    getitem() {
-      const value = getStore('name');
-      console.log(value)
-      console.log(typeof value)
-    }
-  },
-  created () {
-    request.get('/food').then(res => {
-      console.log(res)
-    })
+  components: {
+    Scroll
   }
 }
 </script>
 
 <style>
+.wrapper {
+  height: 100vh;
+  overflow: hidden;
+}
 
 </style>
