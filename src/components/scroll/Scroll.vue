@@ -9,10 +9,12 @@ import BScroll from "@better-scroll/core";
 
 export default {
   props: {
+    // 是否派发scroll事件 0, 1, 2, 3
     probeType: {
       type: Number,
       default: 1
     },
+    // 是否阻止浏览器原生click事件 false:阻止
     click: {
       type: Boolean,
       default: true
