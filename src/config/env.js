@@ -13,10 +13,8 @@ let imgBaseUrl = '';
 
 
 if (process.env.NODE_ENV == 'development') {
-  console.log('development')
   baseURL = 'https://www.fastmock.site/mock/f6c02f51b99c17b995f3b056e4e405b7/openh5'
 } else if (process.env.NODE_ENV == 'production') {
-  console.log('production')
   baseUrl = 'https://www.baidu.com';
 }
 
